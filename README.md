@@ -12,3 +12,4 @@ Specifics about cloning and running the app will stay on the [*README.md* of the
 The `db_private_lectures` folder is meant to create the db for the docker db image.
 
 The `data.json` file is kept for the record only; now the app uses a database, see `docker-compose.yml`
+
