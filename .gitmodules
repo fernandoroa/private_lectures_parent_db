@@ -1,0 +1,3 @@
+[submodule "private_lectures"]
+	path = private_lectures
+	url = https://github.com/fernandoroa/private_lectures_rs_challenge.git
