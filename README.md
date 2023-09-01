@@ -5,7 +5,7 @@ This repository holds source files for a docker hosted db, and as submodule, the
 Upon cloning, this repository is meant to bear as subfolder the [*private_lectures* app repository](https://github.com/fernandoroa/private_lectures_rs_challenge)
 too.
 
-This repository holds docker related files and the database files to make to app work
+This repository holds docker related files and the postgres database needed by the app.
 
 Specifics about cloning and running the app will stay on the [*README.md* of the *private lectures* repository](https://github.com/fernandoroa/private_lectures_rs_challenge)
 
