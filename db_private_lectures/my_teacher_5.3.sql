@@ -34,7 +34,8 @@ CREATE TABLE public.students (
     email text NOT NULL,
     school_year text NOT NULL,
     hour_intensity text NOT NULL,
-    birth timestamp without time zone NOT NULL
+    birth timestamp without time zone NOT NULL,
+    teacher_id integer NOT NULL
 );
 
 
@@ -112,8 +113,9 @@ ALTER TABLE ONLY public.teachers ALTER COLUMN id SET DEFAULT nextval('public.tea
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.students (id, avatar_url, name, email, school_year, hour_intensity, birth) FROM stdin;
-7	https://source.unsplash.com/collection/3465564/500x500	Daniel Spielberg	spi@gmail.com	Ensino médio 1	15	2015-12-15 00:00:00
+COPY public.students (id, avatar_url, name, email, school_year, hour_intensity, birth, teacher_id) FROM stdin;
+9	https://source.unsplash.com/collection/3465564/500x500	Daniel Spielberg	spi@gmail.com	Ensino médio 3	5	2012-12-12 00:00:00	10
+10	https://source.unsplash.com/collection/3465564/500x500	Anna Bran	anna@gmail.com	Ensino médio 1	5	2012-02-02 00:00:00	12
 \.
 
 
@@ -123,6 +125,8 @@ COPY public.students (id, avatar_url, name, email, school_year, hour_intensity, 
 
 COPY public.teachers (id, avatar_url, name, birth, education_level, lecture_type, subjects_taught, created_at) FROM stdin;
 10	https://source.unsplash.com/collection/3465564/500x500	Clark Dean	2002-12-12 00:00:00	doutorado	distance	tecnologia, programação	2023-08-12 00:00:00
+11	https://source.unsplash.com/collection/772333/500x500	Daniel Ford	1982-02-02 00:00:00	ensino_superior_completo	distance	Matemática	2023-09-01 00:00:00
+12	https://source.unsplash.com/collection/772333/500x500	Henry Donald	1993-03-03 00:00:00	doutorado	present	tecnologia	2023-09-01 00:00:00
 \.
 
 
@@ -130,14 +134,14 @@ COPY public.teachers (id, avatar_url, name, birth, education_level, lecture_type
 -- Name: students_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.students_id_seq', 8, true);
+SELECT pg_catalog.setval('public.students_id_seq', 10, true);
 
 
 --
 -- Name: teachers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.teachers_id_seq', 10, true);
+SELECT pg_catalog.setval('public.teachers_id_seq', 12, true);
 
 
 --
