@@ -2,11 +2,11 @@ version: '3'
 
 services:
   app:
-    image: fercyto/private_lectures_rs_5.3
+    image: fercyto/private_lectures_rs_5.4
     build: 
       context: ./
       dockerfile: Dockerfile
-    container_name: private_lectures_rs_5.3_app
+    container_name: private_lectures_rs_5.4_app
     restart: always
     ports:
       - 5040:5040
@@ -17,12 +17,12 @@ services:
 
   db:
     image: postgres:latest
-    container_name: private_lectures_rs_db
+    container_name: private_lectures_rs_db_5.4
     environment:
       POSTGRES_USER: fernando
       POSTGRES_PASSWORD: 123456
     volumes:
-      - ./db_private_lectures/my_teacher_5.3.sql:/docker-entrypoint-initdb.d/my_teacher.sql
+      - ./db_private_lectures/my_teacher_5-4.sql:/docker-entrypoint-initdb.d/my_teacher_5-4.sql
       - ./db_private_lectures/data:/var/lib/postgresql/data
       - ./db_private_lectures/files:/home
     expose:
